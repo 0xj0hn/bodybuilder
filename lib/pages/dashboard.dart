@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class DashboardPage extends StatelessWidget {
   @override
   List choices = ["پروفایل", "برنامه‌ها", "برنامه هر روز", "خروج"];
@@ -10,6 +12,12 @@ class DashboardPage extends StatelessWidget {
     Icon(Icons.schedule),
     Icon(Icons.exit_to_app),
   ];
+  List ops = [
+    () => null,
+    () => null,
+    () => null,
+    () => Get.off(() => Login())
+  ]; //some functions which can be helpful in GridView.count
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -27,6 +35,7 @@ class DashboardPage extends StatelessWidget {
             (index) => Choice(
                   icon: icons[index],
                   text: choices[index],
+                  onPressed: ops[index],
                 )),
       ),
     );
@@ -36,7 +45,8 @@ class DashboardPage extends StatelessWidget {
 class Choice extends StatelessWidget {
   String? text;
   Widget? icon;
-  Choice({this.text, this.icon});
+  Function()? onPressed;
+  Choice({this.text, this.icon, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -45,9 +55,7 @@ class Choice extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         child: InkWell(
           borderRadius: BorderRadius.circular(30),
-          onTap: () {
-            //avoid doing sth...
-          },
+          onTap: onPressed,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
