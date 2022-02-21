@@ -1,3 +1,4 @@
+import 'package:bodybuilder/pages/dashboard.dart';
 import 'package:bodybuilder/pages/login.dart';
 import 'package:bodybuilder/utils/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Login(),
+      home: Hive.box("auth").get("is_loggined") ? DashboardPage() : Login(),
       locale: Locale('fa', 'IR'),
       theme: ThemeX.lightTheme,
       debugShowCheckedModeBanner: false,

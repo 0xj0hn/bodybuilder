@@ -10,6 +10,7 @@ class Login extends StatelessWidget {
   var checkValue = false.obs;
   final TextEditingController nationalCodeTxt = TextEditingController();
   final TextEditingController passwordTxt = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     void checkChanged(bool? value) {
@@ -33,8 +34,8 @@ class Login extends StatelessWidget {
             // ),
 
             Image.network(
-              "https://images.everydayhealth.com/images/plank-jack.gif?w=1110",
-              //"https://www.stretchmarks.org/wp-content/uploads/2016/08/icon-bodybuilding.png",
+              //"https://images.everydayhealth.com/images/plank-jack.gif?w=1110",
+              "https://www.stretchmarks.org/wp-content/uploads/2016/08/icon-bodybuilding.png",
               height: 190,
               width: 250,
             ),
@@ -119,7 +120,6 @@ class Login extends StatelessWidget {
                               Get.snackbar("وضعیت", "لطفا فیلدها را پر کنید.");
                             } else {
                               isLoading.value = true;
-
                               await Future.delayed(
                                   const Duration(seconds: 3),
                                   () => Requests.login(
