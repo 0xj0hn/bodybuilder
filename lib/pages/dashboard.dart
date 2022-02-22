@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import 'login.dart';
 
@@ -7,7 +8,7 @@ class DashboardPage extends StatelessWidget {
   @override
   List choices = ["پروفایل", "برنامه‌ها", "برنامه هر روز", "خروج"];
   List icons = [
-    Icon(Icons.verified_user),
+    Icon(Icons.person),
     Icon(Icons.schedule),
     Icon(Icons.schedule),
     Icon(Icons.exit_to_app),
@@ -16,7 +17,10 @@ class DashboardPage extends StatelessWidget {
     () => null,
     () => null,
     () => null,
-    () => Get.off(() => Login())
+    () {
+      Hive.box("auth").put("is_loggined", false);
+      Get.off(() => Login());
+    }
   ]; //some functions which can be helpful in GridView.count
   Widget build(BuildContext context) {
     return Scaffold(

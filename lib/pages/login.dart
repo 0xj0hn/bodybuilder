@@ -33,13 +33,18 @@ class Login extends StatelessWidget {
             //   height: Get.height / 9,
             // ),
 
-            Image.network(
-              //"https://images.everydayhealth.com/images/plank-jack.gif?w=1110",
-              "https://www.stretchmarks.org/wp-content/uploads/2016/08/icon-bodybuilding.png",
+            // Image.network(
+            //   //"https://images.everydayhealth.com/images/plank-jack.gif?w=9999999",
+            //   "https://www.stretchmarks.org/wp-content/uploads/2016/08/icon-bodybuilding.png",
+            //   height: 190,
+            //   width: 250,
+            // ),
+
+            Image.asset(
+              "assets/pictures/bodybuilding.png",
               height: 190,
               width: 250,
             ),
-
             Padding(
               padding: const EdgeInsets.all(30),
               child: TextFormField(
