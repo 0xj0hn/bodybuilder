@@ -1,3 +1,4 @@
+import 'package:bodybuilder/pages/profile.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -14,7 +15,7 @@ class DashboardPage extends StatelessWidget {
     Icon(Icons.exit_to_app),
   ];
   List ops = [
-    () => null,
+    () => Get.to(() => ProfilePage()),
     () => null,
     () => null,
     () {
