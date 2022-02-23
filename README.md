@@ -14,3 +14,7 @@ Actually if you've enjoyed, you can star it :D.
 
 ## Can we translate app in another languages?
 Yes. you can translate it and then send a pull request for us. if they will perfect, we accept your request. then you will be contributed on it.
+
+
+## Can we be sponsor of your project?
+Yes definetaly :) you can be a sponser. you can see the idpay link which you can find it on the right side of this repository("sponsor this project" part).
