@@ -6,7 +6,7 @@ A flutter project which can be awesome for planning on sport(specially body buil
 This project is a starting point for a Flutter application.
 
 
-## How does it works?
+## How does it work?
 it's an iranian app. the couch can plan for the bodybuilders. bodybuilders should do plans for theirselves.
 Actually if you've enjoyed, you can star it :D.
 </br>
@@ -17,4 +17,4 @@ Yes. you can translate it and then send a pull request for us. if they will be p
 
 
 ## Can we be sponsor of your project?
-Yes definetaly :) you can be a sponser. you can see the idpay link which you can find it on the right side of this repository("sponsor this project" part).
+Yes definetaly :) see the toolbar, you'll find it (it's a button with a heart icon)
