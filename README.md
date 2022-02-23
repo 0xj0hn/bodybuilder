@@ -13,7 +13,7 @@ Actually if you've enjoyed, you can star it :D.
 </br>
 
 ## Can we translate app in another languages?
-Yes. you can translate it and then send a pull request for us. if they will perfect, we accept your request. then you will be contributed on it.
+Yes. you can translate it and then send a pull request for us. if they will be perfect, we accept your request. then you will be contributed on it.
 
 
 ## Can we be sponsor of your project?
