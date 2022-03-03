@@ -17,4 +17,4 @@ Yes. you can translate it and then send a pull request for us. if they will be p
 
 
 ## Can we be sponsor of your project?
-Yes definetaly :) see the toolbar, you'll find it (it's a button with a heart icon)
+Yes definetaly :) see the toolbar, you'll find it (it's a button with a heart icon which contains a sponsor text)
