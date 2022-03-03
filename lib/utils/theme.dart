@@ -9,6 +9,10 @@ class TextStyleX {
     fontWeight: FontWeight.w300,
     color: Colors.blue,
   );
+  static const boldStyle = const TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 }
 
 class ThemeX {
