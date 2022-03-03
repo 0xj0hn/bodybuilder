@@ -15,10 +15,6 @@ class Requests {
 
   static signup(name, family, nationalCode, password, phonenumber) async {
     Get.snackbar("وضعیت", "ثبت نام با موفقیت انجام شد...");
-    Get.to(() => Scaffold(
-          appBar: AppBar(
-            title: Text("منو"),
-          ),
-        ));
+    Get.off(() => DashboardPage());
   }
 }
