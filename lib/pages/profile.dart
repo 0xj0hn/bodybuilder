@@ -104,9 +104,22 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
+          Center(
+            child: Text("تاریخ عضویت: 1400/2/2"),
+          ),
+          Padding(
+            padding: EdgeInsets.all(60),
+            child: CustomedButton(
+              child: Text("آپدیت پروفایل"),
+              padding: EdgeInsets.all(30),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.all(30),
-            child: CustomedButton(),
+            child: TextButton(
+              onPressed: () {},
+              child: Text("تعویض رمز عبور"),
+            ),
           ),
         ],
       ),
