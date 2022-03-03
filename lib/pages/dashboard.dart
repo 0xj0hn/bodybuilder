@@ -1,4 +1,5 @@
 import 'package:bodybuilder/pages/profile.dart';
+import 'package:bodybuilder/pages/schedules.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -16,7 +17,7 @@ class DashboardPage extends StatelessWidget {
   ];
   List ops = [
     () => Get.to(() => ProfilePage()),
-    () => null,
+    () => Get.to(() => SchedulesPage()),
     () => null,
     () {
       Hive.box("auth").put("is_loggined", false);
