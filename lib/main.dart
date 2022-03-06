@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.topLevel,
       home: Hive.box("auth").get("is_loggined") ? DashboardPage() : Login(),
       locale: Locale('fa', 'IR'),
       theme: ThemeX.lightTheme,
