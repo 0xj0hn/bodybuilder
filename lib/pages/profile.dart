@@ -107,6 +107,9 @@ class ProfilePage extends StatelessWidget {
           Center(
             child: Text("تاریخ عضویت: 1400/2/2"),
           ),
+          Center(
+            child: Text("نام مربی: علی رنجبر"),
+          ),
           Padding(
             padding: EdgeInsets.all(60),
             child: CustomedButton(
