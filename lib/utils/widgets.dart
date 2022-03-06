@@ -127,31 +127,84 @@ class ScheduleWidget extends StatelessWidget {
   }
 }
 
-class DaysWidget extends StatelessWidget {
+class DayWidget extends StatelessWidget {
   String? daytitle;
   String? timeAverage;
   String? activityNumbers;
-  DaysWidget({this.activityNumbers, this.daytitle, this.timeAverage});
+  Function()? onPressed;
+  DayWidget(
+      {this.activityNumbers, this.daytitle, this.timeAverage, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Card(
+        color: Color(0xffeaf1ff),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
-          onTap: () {},
+          onTap: onPressed,
           child: Padding(
             padding: EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "روز ۱",
+                  "روز " + daytitle!,
                   style: TextStyleX.boldStyle,
                 ),
-                Text("تعداد حرکات: 5")
+                Text(
+                    "تعداد حرکات: $activityNumbers\nزمان تقریبی: $timeAverage"),
               ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ActivityWidget extends StatelessWidget {
+  String? daytitle;
+  String? timeAverage;
+  String? activityNumbers;
+  Function()? onPressed;
+  ActivityWidget(
+      {this.activityNumbers, this.daytitle, this.timeAverage, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topRight,
+      margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+      child: Material(
+        child: Card(
+          color: Color(0xffeaf1ff),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: onPressed,
+            child: Padding(
+              padding: EdgeInsets.all(40),
+              child: Container(
+                margin: EdgeInsets.fromLTRB(60, 10, 10, 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.network(
+                        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F69%2Fb9%2Fcf%2F69b9cf8b3c0a6d971ce0e1ac83a17c03.gif&f=1&nofb=1"),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text("درجا زدن"),
+                          Text("00:20"),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
         ),
