@@ -42,5 +42,9 @@ class ThemeX {
     brightness: Brightness.light,
     canvasColor: Colors.white,
     iconTheme: const IconThemeData(color: Colors.blue),
+    tabBarTheme: TabBarTheme(
+      labelColor: Colors.blue,
+      labelStyle: TextStyle(fontFamily: 'Vazir'),
+    ),
   );
 }
