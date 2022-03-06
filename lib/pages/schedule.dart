@@ -1,3 +1,4 @@
+import 'package:bodybuilder/pages/theday.dart';
 import 'package:bodybuilder/utils/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,15 +24,20 @@ class Schedule extends StatelessWidget {
       ),
       body: Align(
         child: ListView(
-          children: [
-            DaysWidget(),
-            DaysWidget(),
-            DaysWidget(),
-            DaysWidget(),
-            DaysWidget(),
-            DaysWidget(),
-          ],
-        ),
+            children: List.generate(11, (index) {
+          return DayWidget(
+            activityNumbers: (index + 1).toString(),
+            daytitle: (index + 1).toString(),
+            timeAverage: "2:0$index:00",
+            onPressed: () {
+              Get.to(
+                () => TheDayPage(
+                  title: "روز " + (index + 1).toString(),
+                ),
+              );
+            },
+          );
+        })),
       ),
     );
   }
