@@ -32,17 +32,16 @@ class DashboardPage extends StatelessWidget {
           style: Get.theme.primaryTextTheme.headline6,
         ),
       ),
-      body: GridView.count(
-        crossAxisCount: 3,
-        crossAxisSpacing: 4.0,
-        mainAxisSpacing: 8.0,
+      body: ListView(
+        padding: EdgeInsets.all(30),
         children: List.generate(
-            choices.length,
-            (index) => Choice(
-                  icon: icons[index],
-                  text: choices[index],
-                  onPressed: ops[index],
-                )),
+          choices.length,
+          (index) => Choice(
+            icon: icons[index],
+            text: choices[index],
+            onPressed: ops[index],
+          ),
+        ),
       ),
     );
   }
@@ -55,24 +54,40 @@ class Choice extends StatelessWidget {
   Choice({this.text, this.icon, this.onPressed});
   @override
   Widget build(BuildContext context) {
-    return Material(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(30),
-          onTap: onPressed,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              icon!,
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text("$text"),
-              )
-            ],
+    // return Material(
+    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    //   child: Card(
+    //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    //     child: InkWell(
+    //       borderRadius: BorderRadius.circular(30),
+    //       onTap: onPressed,
+    //       child: Column(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: <Widget>[
+    //           icon!,
+    //           Padding(
+    //             padding: EdgeInsets.all(10),
+    //             child: Text("$text"),
+    //           )
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
+
+    return Container(
+      margin: EdgeInsets.all(30),
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(EdgeInsets.all(30)),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),
+        ),
+        child: Column(
+          children: [icon!, Text("$text")],
         ),
       ),
     );

@@ -45,11 +45,12 @@ class CustomedButton extends StatelessWidget {
   @override
   Widget? child;
   EdgeInsets? padding;
-  CustomedButton({this.child, this.padding});
+  Function()? onPressed;
+  CustomedButton({this.child, this.padding, this.onPressed});
   Widget build(BuildContext context) {
     return Container(
-      child: ElevatedButton(
-        onPressed: () {},
+      child: OutlinedButton(
+        onPressed: onPressed,
         style: ButtonStyle(
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
@@ -57,7 +58,7 @@ class CustomedButton extends StatelessWidget {
               ),
             ),
             padding: MaterialStateProperty.all(padding)),
-        child: child,
+        child: child!,
       ),
     );
   }

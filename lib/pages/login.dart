@@ -116,7 +116,7 @@ class Login extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(50, 20, 50, 20),
                 height: 60,
                 child: Obx(
-                  () => ElevatedButton(
+                  () => OutlinedButton(
                     onPressed: isLoading.value
                         ? null
                         : () async {
@@ -148,7 +148,6 @@ class Login extends StatelessWidget {
                           : const Text(
                               "ورود",
                               style: TextStyle(
-                                color: Colors.black,
                                 fontWeight: FontWeight.w100,
                                 fontFamily: 'Vazir',
                               ),
